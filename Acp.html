@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+<h3>My Class</h3>
+
+<p id="my1"></p>
+
+<p id="my2"></p>
+
+<p id="my3"></p>
+
+<script>
+
+class Students {
+
+constructor(name) {
+
+this.studentname = name;
+
+}
+
+// Static method, called on the class
+
+static hello() {
+
+return "Hello!";
+
+}
+
+// Static method, called on the class
+
+static welcome(x) {
+
+return "Welcome, Leo! " + x.studentname;
+
+}
+
+// Instance method, called on the instance of the class
+
+hi() {
+
+return "Hi " + this.studentname;
+
+}
+
+}
+
+let myname = new Students("Leonard");
+
+// Corrected method calls
+
+document.getElementById("my1").innerHTML = Students.hello(); // Static method, should be called on the class
+
+document.getElementById("my2").innerHTML = myname.hi(); // Instance method, called on an instance
+
+document.getElementById("my3").innerHTML = Students.welcome(myname); // Static method with instance passed as argument
+
+</script>
+
+</body>
+
+</html>
